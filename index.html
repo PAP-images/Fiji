@@ -16,7 +16,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta http-equiv="refresh" content="0; url=https://claude.ai/artifact/YSVJxk56gzYk7nftJQe3Ya">
 <style>
   body{margin:0;min-height:100vh;display:grid;place-items:center;background:#1e2023;color:#f2f3f4;font:16px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center;padding:16px}
   img{max-width:320px;width:100%;border-radius:10px}
@@ -27,8 +26,15 @@
   <div>
     <img src="preview.png" alt="Fiji Daily Checks – The P.A. People">
     <p>Opening Fiji Daily Checks…</p>
-    <a href="https://claude.ai/artifact/YSVJxk56gzYk7nftJQe3Ya">Open now</a>
+    <a id="open" href="https://claude.ai/artifact/YSVJxk56gzYk7nftJQe3Ya">Open now</a>
   </div>
-  <script>location.replace("https://claude.ai/artifact/YSVJxk56gzYk7nftJQe3Ya");</script>
+  <noscript><meta http-equiv="refresh" content="0; url=https://claude.ai/artifact/YSVJxk56gzYk7nftJQe3Ya"></noscript>
+  <script>
+    var tab = (location.hash || "").replace("#", "");
+    var ok = ["eng","tech","faults","tasks","log","report","history"].indexOf(tab) > -1;
+    var dest = "https://claude.ai/artifact/YSVJxk56gzYk7nftJQe3Ya" + (ok ? "#" + tab : "");
+    document.getElementById("open").href = dest;
+    location.replace(dest);
+  </script>
 </body>
 </html>
